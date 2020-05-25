@@ -50,65 +50,72 @@ export default function AddVideo() {
   } else if (step === 1) {
     return (
       <div className='container'>
-        <h1>Add a new video</h1>
-        <div className='form-group'>
-          <label>Add video URL</label><br></br>
-          <input
-            placeholder='https://youtube.com/SIOJDDjdjdaio'
-            onChange={e => setVideoUrl(e.target.value)}
-            type='text'
-            required
-            value={videoUrl}
-          />
-        </div>
-        <div className='form-group'>
-          <label>Add video description</label><br></br>
-          <input
-            placeholder='A short video explaining about how to build a static html page'
-            onChange={e => setDescription(e.target.value)}
-            type='text'
-            required
-            value={description} />
-        </div>
-        <div className='form-group'>
-          <label>Keywords</label><br></br>
-          <input
-            placeholder='HTML'
-            onChange={e => setKeyword1(e.target.value)}
-            type='text'
-            required
-            value={keyword1}
-          />
-          {(keyword1.length > 0) &&
+        <form>
+          <h1>Add a new video</h1>
+          <div className='form-group'>
+            <label>Add video URL</label><br></br>
+            <input
+              placeholder='https://youtube.com/SIOJDDjdjdaio'
+              onChange={e => setVideoUrl(e.target.value)}
+              type='text'
+              required
+              value={videoUrl}
+            />
+          </div>
+          <div className='form-group'>
+            <label>Add video description</label><br></br>
+            <input
+              placeholder='A short video explaining about how to build a static html page'
+              onChange={e => setDescription(e.target.value)}
+              type='text'
+              required
+              value={description} />
+          </div>
+          <div className='form-group'>
+            <label>Keywords</label><br></br>
             <input
               placeholder='HTML'
-              onChange={e => setKeyword2(e.target.value)}
+              onChange={e => setKeyword1(e.target.value)}
               type='text'
-              value={keyword2}
+              required
+              value={keyword1}
             />
-          }
-          {(keyword2.length > 0) &&
-            <input
-              placeholder='HTML'
-              onChange={e => setKeyword3(e.target.value)}
-              type='text'
-              value={keyword3}
-            />
-          }
-        </div>
-        <button className='primary-button' onClick={() => setStep(2)}>Next</button>
+            {(keyword1.length > 0) &&
+              <input
+                placeholder='HTML'
+                onChange={e => setKeyword2(e.target.value)}
+                type='text'
+                value={keyword2}
+              />
+            }
+            {(keyword2.length > 0) &&
+              <input
+                placeholder='HTML'
+                onChange={e => setKeyword3(e.target.value)}
+                type='text'
+                value={keyword3}
+              />
+            }
+          </div>
+          <button className='primary-button' onClick={() => setStep(2)}>Next</button>
+        </form>
       </div >
     )
   } else if (step === 2) {
     return (
       <div className='container'>
-        <h1>Add your first tag to it!</h1>
-        <input onChange={e => setTagDescription(e.target.value)} value={tagDescription} type='text' placeholder='How to position an HTML button' />
-        <input onChange={e => setTimeStamp(e.target.value)} value={timeStamp} type='text' placeholder='00:34' />
-        <input onChange={e => setTagKeyword1(e.target.value)} value={tagKeyword1} type='text' placeholder='HTML' />
-        <input onChange={e => setTagKeyword2(e.target.value)} value={tagKeyword2} type='text' placeholder='CSS' />
-        <input onChange={e => setTagKeyword3(e.target.value)} value={tagKeyword3} type='text' placeholder='Javascript' />
-        <button className='primary-button' onClick={handleSubmit}>Submit Video</button>
+        <form>
+          <h1>Add your first tag to it!</h1>
+          <label>Write a tag description</label><br></br>
+          <input onChange={e => setTagDescription(e.target.value)} value={tagDescription} type='text' placeholder='How to position an HTML button' />
+          <label>Add a time stamp</label><br></br>
+          <input onChange={e => setTimeStamp(e.target.value)} value={timeStamp} type='text' placeholder='00:34' />
+          <label>Add relevant keywords</label><br></br>
+          <input onChange={e => setTagKeyword1(e.target.value)} value={tagKeyword1} type='text' placeholder='HTML' />
+          {(tagKeyword1.length > 0) && <input onChange={e => setTagKeyword2(e.target.value)} value={tagKeyword2} type='text' placeholder='CSS' />}
+          {(tagKeyword1.length > 0 && tagKeyword2.length > 0) && <input onChange={e => setTagKeyword3(e.target.value)} value={tagKeyword3} type='text' placeholder='Javascript' />}
+          <button className='primary-button' onClick={handleSubmit}>Submit Video</button>
+        </form>
         {isLoading && <Spinner />}
       </div>
     )

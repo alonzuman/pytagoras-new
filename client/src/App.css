@@ -41,8 +41,14 @@ form {
   margin: 0 auto;
 }
 
+label {
+  text-align: left;
+  float: left;
+  width: 100%;
+}
+
 input {
-  max-width: 300px;
+  max-width: 500px;
   padding: 8px 16px;
   font-size: 16px;
   width: 100%;
@@ -74,7 +80,7 @@ button:hover {
   color: white;
   border: none;
   border-radius: 20px;
-  max-width: 300px;
+  max-width: 500px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
 }

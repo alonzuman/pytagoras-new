@@ -13,7 +13,7 @@ export default function Navbar() {
         Home
       </Link>
       <Link className='navbar-element' to='/all'>
-        All Videos
+        View All
       </Link>
       <Link style={buttonStyle} className='navbar-element primary-button' to='/add'>
         Add new
