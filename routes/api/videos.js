@@ -31,12 +31,14 @@ router.get('/s=:keyword', async (req, res) => {
 // POST, uploading a new video
 router.post('/', async (req, res) => {
   const content = req.body
+  console.log(content);
   const video = new Video({
     videoUrl: content.videoUrl,
     description: content.description,
     keywords: content.keywords.map(keyword => keyword.toLowerCase()),
-    tags: []
+    tags: content.tags
   })
+  console.log(video);
 
   await video.save();
   res.status(201).json({

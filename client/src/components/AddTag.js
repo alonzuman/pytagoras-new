@@ -21,7 +21,7 @@ export default function AddTag({ addTag }) {
       <input required value={keyword1} onChange={e => setKeyword1(e.target.value)} type='text' placeholder='HTML' />
       <input required value={keyword2} onChange={e => setKeyword2(e.target.value)} type='text' placeholder='HTML' />
       <input required value={keyword3} onChange={e => setKeyword3(e.target.value)} type='text' placeholder='HTML' />
-      <button type='submit'>Add tag to video!</button>
+      <button className='primary-button' type='submit'>Add tag to video!</button>
     </form>
   )
 }

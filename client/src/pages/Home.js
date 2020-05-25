@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
 import SearchResults from '../components/SearchResults';
-import logo from './pytagoras-logo.jpg';
+import logo from './pytagoras-logo.svg';
 
 
 export default function Home() {
@@ -45,12 +45,14 @@ export default function Home() {
               type='text'
               placeholder='What are you looking for?'
             />
-            <button type='submit'>Search</button>
+            <button id='search-button' className='primary-button' type='submit'>Search</button>
           </form>
-          {searchResults.length > 0 && <h2>{resultsMessage}</h2>}
-          <SearchResults searchResults={searchResults} />
-          {isLoading && <Spinner />}
-          {message && <h3>{message}</h3>}
+          <div className='results'>
+            {searchResults.length > 0 && <h2>{resultsMessage}</h2>}
+            <SearchResults searchResults={searchResults} />
+            {isLoading && <Spinner />}
+            {message && <h3>{message}</h3>}
+          </div>
         </div>
       </div>
     </div>

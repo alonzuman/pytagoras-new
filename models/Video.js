@@ -5,13 +5,21 @@ const TagSchema = new Schema({
   timeStamp: String,
   keywords: Array,
   description: String,
+  dateCreated: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 const VideoSchema = new Schema({
   description: String,
   videoUrl: String,
   keywords: Array,
-  tags: [TagSchema]
+  tags: [TagSchema],
+  dateCreated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 module.exports = Video = mongoose.model("video", VideoSchema);

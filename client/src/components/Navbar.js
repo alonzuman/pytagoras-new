@@ -11,11 +11,8 @@ export default function Navbar() {
       <Link className='navbar-element' to='/all'>
         All Videos
       </Link>
-      <Link className='navbar-element' to='/add'>
+      <Link className='navbar-element primary-button' to='/add'>
         Add new
-      </Link>
-      <Link className='navbar-element' to='/about'>
-        About
       </Link>
     </nav>
   )

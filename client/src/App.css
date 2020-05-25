@@ -60,27 +60,34 @@ li {
 }
 
 button {
-  padding: 0.5rem 1rem;
   font-size: 16px;
-  background-color: var(--primary);
-  border: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 20px;
-  margin-top: 8px;
   width: 100%;
-  max-width: 300px;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+.primary-button {
+  background-color: var(--primary);
+  border: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+}
+
 .secondary-button {
+  margin: 0px 0.2rem;
+  border-radius: 20px;
   background-color: var(--app-light);
   border: var(--border);
   color: var(--dark);
-  margin: 0 0.5rem;
+}
+
+#search-button {
+  margin-top: 0.5rem;
 }
 
 #link-button {
@@ -91,7 +98,10 @@ button:hover {
   color: white;
   border: none;
   border-radius: 20px;
-  margin-top: 8px;
   width: 100%;
   max-width: 300px;
+}
+
+.results {
+  margin-top: 1rem;
 }

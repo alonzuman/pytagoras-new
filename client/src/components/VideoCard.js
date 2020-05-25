@@ -26,7 +26,7 @@ export default function VideoCard({ video }) {
         <KeywordsContainer keywords={video.keywords} />
       </div>
       <div style={buttonsBar}>
-        <a id='link-button' class='secondary-button' href={video.videoUrl} target='_blank' alt={video.name}>Watch video <i className="fas fa-video"></i></a>
+        <a id='link-button' className='secondary-button' href={video.videoUrl} target='_blank' alt={video.name}>Watch video <i className="fas fa-video"></i></a>
         {!isAddingTags && <button className='secondary-button' onClick={() => setIsAddingTags(!isAddingTags)}>Add a tag <i className="fas fa-tags"></i></button>}
         {isAddingTags && <button className='secondary-button' onClick={() => setIsAddingTags(!isAddingTags)}>Close</button>}
         {!tagsOpen && <button className='secondary-button' onClick={() => setTagsOpen(!tagsOpen)}>Open tags <i className="fas fa-chevron-down"></i></button>}
