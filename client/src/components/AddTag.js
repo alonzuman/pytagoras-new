@@ -16,12 +16,24 @@ export default function AddTag({ addTag }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input required value={description} onChange={e => setDescription(e.target.value)} type='text' placeholder='Div background colors...' />
-      <input required value={timeStamp} onChange={e => setTimeStamp(e.target.value)} type='text' placeholder='00:34' />
-      <input required value={keyword1} onChange={e => setKeyword1(e.target.value)} type='text' placeholder='HTML' />
-      <input required value={keyword2} onChange={e => setKeyword2(e.target.value)} type='text' placeholder='HTML' />
-      <input required value={keyword3} onChange={e => setKeyword3(e.target.value)} type='text' placeholder='HTML' />
-      <button className='primary-button' type='submit'>Add tag to video!</button>
+      <div className='form-group'>
+        <input required value={description} onChange={e => setDescription(e.target.value)} type='text' placeholder='Div background colors...' />
+      </div>
+      <div className='form-group'>
+        <input required value={timeStamp} onChange={e => setTimeStamp(e.target.value)} type='text' placeholder='00:34' />
+      </div>
+      <div className='form-group'>
+        <input required value={keyword1} onChange={e => setKeyword1(e.target.value)} type='text' placeholder='HTML' />
+      </div>
+      <div className='form-group'>
+        {(keyword1.length > 0) && < input value={keyword2} onChange={e => setKeyword2(e.target.value)} type='text' placeholder='Javascript' />}
+      </div>
+      <div className='form-group'>
+        {(keyword1.length > 0 && keyword2.length > 0) && <input value={keyword3} onChange={e => setKeyword3(e.target.value)} type='text' placeholder='CSS' />}
+      </div>
+      <div className='form-group'>
+        <button className='primary-button' type='submit'>Add tag to video!</button>
+      </div>
     </form>
   )
 }

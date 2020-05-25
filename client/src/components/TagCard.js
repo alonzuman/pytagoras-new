@@ -10,15 +10,9 @@ export default function TagCard({ tag }) {
 
   return (
     <div style={cardStyle}>
-      <p>
-        {tag.description}
-      </p>
-      <p>
-        time stamp: {tag.timeStamp}
-      </p>
-      <p>
-        keywords: {tag.keywords}
-      </p>
+      <p><b>Description: </b>{tag.description}</p>
+      <p><b>Time stamp: </b>{tag.timeStamp}</p>
+      <p><b>Relevant keywords: </b>{tag.keywords}</p>
     </div>
   )
 }

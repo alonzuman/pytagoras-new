@@ -13,9 +13,7 @@ router.get('/s=:keyword', async (req, res) => {
   const keyword = req.params.keyword.toLowerCase();
   // WHOEVER LOOKING AT THIS PIECE OF CODE, IM SORRY WE WERE IN RUSH
   const results = await Video.find();
-
   let filteredResults = []
-
   results.forEach(result => {
     result.tags.forEach(tag => {
       if (tag.keywords.includes(keyword) && !filteredResults.includes(result)) {
