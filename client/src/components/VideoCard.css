@@ -2,7 +2,7 @@
   padding: 1rem;
   margin: 1rem auto;
   border-radius: 1rem;
-  max-width: 500px;
+  max-width: 700px;
   border: var(--border)
 }
 
@@ -11,4 +11,18 @@
   justify-content: space-between;
   padding: 0.5rem;
   text-align: left;
+}
+
+.keywords-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.keyword-icon {
+  background-color: var(--alt);
+  border: none;
+  color: var(--app-light);
 }

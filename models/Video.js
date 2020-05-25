@@ -14,6 +14,7 @@ const TagSchema = new Schema({
 const VideoSchema = new Schema({
   description: String,
   videoUrl: String,
+  username: String,
   keywords: Array,
   tags: [TagSchema],
   dateCreated: {

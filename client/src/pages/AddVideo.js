@@ -8,9 +8,10 @@ export default function AddVideo() {
   const [isLoading, setIsLoading] = useState(false);
   const [videoUrl, setVideoUrl] = useState('');
   const [description, setDescription] = useState('');
-  const [keyword1, setKeyword1] = useState('');
-  const [keyword2, setKeyword2] = useState('');
-  const [keyword3, setKeyword3] = useState('');
+  const [username, setUsername] = useState('');
+  // const [keyword1, setKeyword1] = useState('');
+  // const [keyword2, setKeyword2] = useState('');
+  // const [keyword3, setKeyword3] = useState('');
 
   const [tagDescription, setTagDescription] = useState('');
   const [timeStamp, setTimeStamp] = useState('');
@@ -31,7 +32,7 @@ export default function AddVideo() {
     const video = {
       videoUrl,
       description,
-      keywords: [keyword1, keyword2, keyword3],
+      // keywords: [keyword1, keyword2, keyword3],
       tags: [tag]
     }
 
@@ -72,8 +73,10 @@ export default function AddVideo() {
               value={description} />
           </div>
           <div className='form-group'>
-            <label>Keywords</label><br></br>
-            <input
+            <label>Whats your name?</label><br></br>
+            <input type='text' required placeholder='John Doe' value={username} onChange={e => setUsername(e.target.value)} />
+            {/* <label>Keywords</label><br></br> */}
+            {/* <input
               placeholder='HTML'
               onChange={e => setKeyword1(e.target.value)}
               type='text'
@@ -95,7 +98,7 @@ export default function AddVideo() {
                 type='text'
                 value={keyword3}
               />
-            }
+            } */}
           </div>
           <button className='primary-button' onClick={() => setStep(2)}>Next</button>
         </form>

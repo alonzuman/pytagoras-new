@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Spinner from '../components/Spinner';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SearchResults from '../components/SearchResults';
 import logo from './pytagoras-logo.svg';
@@ -36,7 +37,9 @@ export default function Home() {
     <div>
       <div className="App">
         <div className='container'>
-          <img src={logo} className='logo' alt='logo' />
+          <Link to='/'>
+            <img src={logo} className='logo' alt='logo' />
+          </Link>
           <form onSubmit={handleSubmit}>
             <input
               onChange={e => handleInput(e.target.value)}
@@ -49,7 +52,7 @@ export default function Home() {
           </form>
           <div className='results'>
             {searchResults.length > 0 && <h2>{resultsMessage}</h2>}
-            <SearchResults searchResults={searchResults} />
+            <SearchResults keyword={keyword} searchResults={searchResults} />
             {isLoading && <Spinner />}
             {message && <h3>{message}</h3>}
           </div>

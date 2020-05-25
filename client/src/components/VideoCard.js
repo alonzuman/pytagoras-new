@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import TagsSection from './TagsSection';
 import AddTag from './AddTag';
 import axios from 'axios';
-import KeywordsContainer from './KeywordsContainer';
+// import KeywordsContainer from './KeywordsContainer';
 import './VideoCard.css';
 import Spinner from './Spinner';
 
-export default function VideoCard({ video }) {
+export default function VideoCard({ video, keyword }) {
   const [vid, setVid] = useState(video);
   const [tagsOpen, setTagsOpen] = useState(false);
   const [isAddingTags, setIsAddingTags] = useState(false);
@@ -15,7 +15,6 @@ export default function VideoCard({ video }) {
   const buttonsBar = {
     display: 'flex'
   }
-
 
   const addTag = async (tag) => {
     setIsLoading(true);
@@ -33,7 +32,7 @@ export default function VideoCard({ video }) {
     <div className="video-card-container">
       <div className='video-card-header'>
         <h2>{vid.description}</h2>
-        <KeywordsContainer keywords={vid.keywords} />
+        {/* <KeywordsContainer keywords={vid.keywords} /> */}
       </div>
       <div style={buttonsBar}>
         <a id='link-button' className='secondary-button' href={vid.videoUrl} target='_blank' alt={vid.name}>Watch video <i className="fas fa-video"></i></a>
@@ -45,7 +44,7 @@ export default function VideoCard({ video }) {
       {isLoading && <Spinner />}
       {tagAdded && <h1>Added successfuly</h1>}
       {isAddingTags && <AddTag addTag={addTag} />}
-      {(tagsOpen && (vid.tags.length > 0)) && <TagsSection tags={vid.tags} />}
+      {(tagsOpen && (vid.tags.length > 0)) && <TagsSection keyword={keyword} tags={vid.tags} />}
     </div>
   )
 }
