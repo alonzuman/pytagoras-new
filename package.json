@@ -1,0 +1,26 @@
+{
+  "name": "pitagoras",
+  "version": "1.0.0",
+  "description": "Video tagger",
+  "engines": {
+    "node": "12.16.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "run-dev": "nodemon index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Alon Zuman, Omri Berkovich, Lior Kesten",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
+    "nodemon": "^2.0.4"
+  }
+}

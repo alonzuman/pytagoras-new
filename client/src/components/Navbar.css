@@ -1,0 +1,9 @@
+.navbar-container {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-element {
+  padding: 8px
+}

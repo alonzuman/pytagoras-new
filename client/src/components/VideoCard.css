@@ -1,0 +1,14 @@
+.video-card-container {
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  max-width: 500px;
+  border: var(--border)
+}
+
+.video-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  text-align: left;
+}
